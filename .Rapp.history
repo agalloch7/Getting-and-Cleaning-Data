@@ -1,0 +1,214 @@
+install.packages("KernSmooth")
+library(datasets)
+data(iris)
+?iris
+mean(iris$Sepal.Length [iris$Species=="virginica"],na.rm=TRUE)
+data(mtcars)
+tapply(mtcars$hp, mtcars$cyl, mean)
+x <- 209.21429 - 82.63636
+x
+debug(ls)
+ls
+debug(ls)
+ls
+library(RCurl)
+library(bitops)
+library(RCurl)
+URL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
+x <- getURL(URL)
+out <- read.csv(textConnection(x))#
+head(out[1:6])
+dim(out)
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv",destfile="reviews.csv",method="libcurl")
+dt <- data.table(read.csv(URL))
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FPUMSDataDict06.pdf"#
+f <- file.path(getwd(), "PUMSDataDict06.pdf")#
+download.file(url, f, mode="wb")#
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"#
+f <- file.path(getwd(), "ss06hid.csv")#
+download.file(url, f)#
+dt <- data.table(read.csv(f))#
+setkey(dt, VAL)#
+dt[, .N, key(dt)]
+packages <- c("data.table", "xlsx", "XML")#
+sapply(packages, require, character.only=TRUE, quietly=TRUE)
+dt <- data.table(read.csv(f))#
+setkey(dt, VAL)#
+dt[, .N, key(dt)]
+install.package("data.table")
+install.packages("data.table")
+library(data.table)
+dt <- data.table(read.csv(f))
+setkey(dt, VAL)
+dt[, .N, key(dt)]
+setkey(dt, FES)#
+dt[, .N, key(dt)]
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"#
+f <- file.path(getwd(), "DATA.gov_NGAP.xlsx")#
+download.file(url, f, mode="wb")#
+rows <- 18:23#
+cols <- 7:15#
+dat <- read.xlsx(f, 1, colIndex=cols, rowIndex=rows)#
+sum(dat$Zip*dat$Ext,na.rm=T)
+install.packages("xlsx")
+library(xlsx)
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"#
+f <- file.path(getwd(), "DATA.gov_NGAP.xlsx")#
+download.file(url, f, mode="wb")#
+rows <- 18:23#
+cols <- 7:15#
+dat <- read.xlsx(f, 1, colIndex=cols, rowIndex=rows)#
+sum(dat$Zip*dat$Ext,na.rm=T)
+library(xml)
+library(XML)
+url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"#
+doc <- xmlInternalTreeParse(url)#
+rootNode <- xmlRoot(doc)#
+names(rootNode)#
+# names(rootNode[[1]])#
+names(rootNode[[1]][[1]])#
+zipcode <- xpathSApply(rootNode, "//zipcode", xmlValue)#
+table(zipcode == 21231)
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv"
+f <- file.path(getwd(), "getdata%2Fdata%2Fss06pid.csv")
+download.file(url,f)
+DT <- fread(f)
+check <- function (y,t) {}
+check <- function (y, t) {message(sprintf("Elapsed time: %.10f", t[3])) pringt(y)}
+check <- function (y, t) {message(sprintf("Elapsed time: %.10f", t[3])) print(y)}
+check <- function (y, t) {#
+    message(sprintf("Elapsed time: %.10f", t[3]))#
+    print(y)#
+}
+t <- system.time(y <- sapply(split(DT$pwgtp15,DT$SEX),mean))#
+check(y, t)
+t <- system.time(y <- mean(DT$pwgtp15,by=DT$SEX))#
+check(y, t)
+t <- system.time(y <- DT[,mean(pwgtp15),by=SEX])#
+check(y, t)
+t <- system.time(y <- rowMeans(DT)[DT$SEX==1]) + system.time(rowMeans(DT)[DT$SEX==2])#
+check(y, t)
+t <- system.time(y <- mean(DT[DT$SEX==1,]$pwgtp15)) + system.time(mean(DT[DT$SEX==2,]$pwgtp15))#
+check(y, t)
+t <- system.time(y <- tapply(DT$pwgtp15,DT$SEX,mean))#
+check(y, t)
+t <- system.time(y <- mean(DT[DT$SEX==1,]$pwgtp15); mean(DT[DT$SEX==2,]$pwgtp15))#
+check(y, t)
+system.time(y <- tapply(DT$pwgtp15,DT$SEX,mean))
+system.time(y<-mean(DT$pwgtp15,by=DT$SEX))
+system.time(y<-DT[,mean(pwgtp15),by=SEX])
+system.time(y<-sapply(split(DT$pwgtp15,DT$SEX),mean))
+system.time(y<-mean(DT[DT$SEX==1,]$pwgtp15))
+system.time(y<-rowMeans(DT)[DT$SEX==1]; rowMeans(DT)[DT$SEX==2])
+system.time(y<-rowMeans(DT)[DT$SEX==1])
+system.time(y<-tapply(DT$pwgtp15,DT$SEX,mean))
+install.packages("RMysql")
+con = url("http://www.weibo.com/5269915109/profile?topnav=1&wvr=6")
+htmlCode = readLines(con)
+con = url("http://www.weibo.com/u/1761485467?topnav=1&wvr=6&topsug=1&is_all=1")
+htmlCode = readLines(con)
+con = url("http://www.r-bloggers.com/mysql-and-r/")
+htmlCode = readLines(con)
+close(con)
+html
+htmlCode
+setInternet2(TRUE)
+packages <- c("data.table", "sqldf")
+sapply(packages, require, character.only = TRUE, quietly = TRUE)
+packages <- c("data.table", "sqldf")
+sapply(packages, require, character.only = TRUE, quietly = TRUE)
+install.packages("sqldf")
+packages <- c("data.table", "sqldf")
+sapply(packages, require, character.only = TRUE, quietly = TRUE)
+setInternet2(True)
+library(httr)
+install.packages("httr")
+oauth_endpoints("github")
+library(httr)
+require(httpuv)
+library(httr)
+require(httpuv)
+oauth_endpoints("github")
+myapp <- oauth_app("github", "ClientID", "ClientSecret")
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+library(httr)
+hurl <- "http://biostat.jhsph.edu/~jleek/contact.html"
+con <- url(hurl)
+htmlCode <- readLines(con)
+close(con)
+sapply(htmlCode[c(10,20,30,100)], nchar)
+intall.packages(data.table)
+install.packages(data.table)
+install.packages(jpeg)
+install.packages("jpeg")
+install.packages("data.table")
+packages <- c("data.table", "jpeg")#
+sapply(packages, require, character.only = TRUE, quietly = TRUE)
+getwd()
+setwd("/Users/yixuanli/R/Project/UCI HAR Dataset")
+getwd()
+trainSubject <- read.table("train/subject_train.txt")#
+testSubject <- read.table("test/subject_test.txt")#
+trainActivity <- read.table("train/Y_train.txt")#
+testActivity <- read.table("test/Y_test.txt")#
+train <- read.table("train/X_train.txt")#
+test <- read.table("test/X_test.txt")
+subject <- rbind(trainSubject, testSubject)#
+setnames(subject, "V1", "subject")#
+activity <- rbind(trainActivity, testActivity)#
+setnames(activity, "V1", "activityNum")#
+data <- rbind(train, test)
+packages <- c("data.table", "reshape2")
+sapply(packages, require, character.only = TRUE, quietly = TRUE)
+setnames(subject, "V1", "subject")
+setnames(activity, "V1", "activityNum")
+subject <- cbind(subject, activity)#
+data <- cbind (subject, data)#
+#
+setkey(data, subject, activityNum)
+head(data)
+features <- read.table("features.txt")#
+setnames(features, names(features), c("featureNum", "featureName")#
+S <- grep("-mean\\(\\)|-std\\(\\)", features[, 2])#
+data <- data[, S]#
+features$featureCode <- features[, paste0("V", featureNum)]
+setnames(features, names(features), c("featureNum", "featureName")
+S <- grep("-mean\\(\\)|-std\\(\\)", features[, 2])#
+data <- data[, S]
+setnames(features, names(features), c("featureNum", "featureName"))
+S <- grep("-mean\\(\\)|-std\\(\\)", features[, 2])#
+data <- data[, S]
+head(data)
+features$featureCode <- features[, paste0("V", featureNum)]
+al <- read.table("activity_labels.txt")#
+al[, 2] = gsub("_", "", tolower(as.character(al[, 2]))#
+activity[,1] = al[activity[,1], 2]
+al[, 2] = gsub("_", "", tolower(as.character(al[, 2])))
+activity[,1] = al[activity[,1], 2]
+activity
+cleaned <- cbind(subject, activity, data)
+write.table(cleaned, "merged_clean_data.txt")
+merged <- read.table("merged_clean_data.txt")
+head(merged)
+uniqueSubjects = unique(subject)[,1]#
+numSubjects = length(unique(subject)[,1])#
+numActivities = length(al[,1])#
+numCols = dim(cleaned)[2]#
+result = cleaned[1:(numSubjects*numActivities), ]#
+#
+row = 1#
+for (s in 1:numSubjects) {#
+    for (a in 1:numActivities) {#
+        result[row, 1] = uniqueSubjects[s]#
+        result[row, 2] = al[a, 2]#
+        tmp <- cleaned[cleaned$subject==s & cleaned$activity==al[a, 2], ]#
+        result[row, 3:numCols] <- colMeans(tmp[, 3:numCols])#
+        row = row+1#
+    }#
+}#
+write.table(result, "data_set_with_the_averages.txt")
+S <- rbind(trainSubject, testSubject)#
+setnames(S, "V1", "subject")#
+A <- rbind(trainActivity, testActivity)#
+setnames(A, "V1", "activityNum")#
+D <- rbind(train, test)
